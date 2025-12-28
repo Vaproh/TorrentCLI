@@ -1,21 +1,38 @@
-# qBittorrent
+# ===============================
+# TorrentCLI Configuration
+# ===============================
+
+# qBittorrent Web UI URL
+# Make sure Web UI is enabled in qBittorrent settings
 qb_url=http://localhost:8080
+
+# qBittorrent Web UI credentials
 qb_user=admin
-qb_pass=password
+qb_pass=your_password_here
 
-# Behaviour
-min_video_mb=300
-ambiguity_ratio=0.90
+# ===============================
+# Download Paths (fallbacks)
+# ===============================
 
-# Modes
-dry_run=true
-verbose=false
+# Used if no matching category exists in qBittorrent
+fallback_movies=D:/Movies
+fallback_tv=D:/TV Shows
 
-# Paths
-download_path=D:/Movies
+# ===============================
+# Speed Limits (bytes per second)
+# ===============================
 
-# State & logs
-lockfile=.torrent_cli.lock
-processed_file=processed_torrents.txt
-failed_file=failed_torrents.txt
-log_file=torrent_cli.log
+# 1048576  = 1 MB/s
+# 512000   = 500 KB/s
+
+dl_limit=1048576
+ul_limit=512000
+
+# ===============================
+# Notes
+# ===============================
+
+# - If a Movies or TV category exists in qBittorrent,
+#   its save path will be used instead of these fallbacks.
+# - processed_torrents.txt and failed_torrents.txt
+#   will be created automatically next to the executable.
